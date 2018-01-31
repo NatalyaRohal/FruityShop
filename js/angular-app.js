@@ -6,6 +6,12 @@ NatashaApp.directive('natashaForm', () => ({
     controllerAs: 'natashaFormCtrl'
 }));
 
+NatashaApp.directive('natashaMainWrapper', () => ({
+    restrict: 'A',
+    controller: NatashaMainWrapperController,
+    controllerAs: 'natashaMainWrapperCtrl'
+}));
+
 function NatashaFormController() {
     const vm = this;
 
@@ -33,3 +39,16 @@ function NatashaFormController() {
     }
 }
 
+function NatashaMainWrapperController() {
+    const vm = this;
+
+    Object.assign(vm, {
+        fixedMenuItems: [
+            {href: '#body', text: 'Home'},
+            {href: '#products', text: 'Products'},
+            {href: '#service', text: 'Service'},
+            {href: '#work', text: 'Work'},
+            {href: '#contact', text: 'Contact'}
+        ]
+    });
+}
