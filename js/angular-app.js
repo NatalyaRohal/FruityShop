@@ -17,11 +17,17 @@ function NatashaFormController() {
 
     Object.assign(vm, {
         fruits: [
-            {class: 'fruit1 col-xs-8', name: 'orange', price: 11, amount: 1, checked: true},
+            {class: 'fruit1 col-xs-8', name: 'orange', price: 11, amount: 1},
             {class: 'fruit2 col-xs-4', name: 'kiwi', price: 9, amount: 1},
             {class: 'fruit3 col-xs-4', name: 'raspberry', price: 10, amount: 1},
             {class: 'fruit4 col-xs-8', name: 'khachapuri', price: 33, amount: 1},
             {class: 'fruit5 col-xs-12', name: 'banana', price: 7, amount: 1}
+        ],
+        formFields: [
+            {id: 'name', title: 'Name:', placeholder: 'Your name'},
+            {id: 'city', title: 'City:', placeholder: 'Your city'},
+            {id: 'address', title: 'Address:', placeholder: 'Your address'},
+            {id: 'email', title: 'Email:', placeholder: 'Your email', regex: /^.+@.+\..+$/}
         ],
 
         getSelectedFruits,

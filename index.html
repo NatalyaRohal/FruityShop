@@ -197,26 +197,18 @@
             <div class="content-md container">
                 <div class="row">
                     <div>
-                        <div class="container content-lg">
-                            <div class="row text-center margin-b-10">
-                                <div class="col-sm-6 col-sm-offset-3">
-                                    <h1>Select a product</h1>
-                                </div>
-                            </div>
-                        </div>
-
                         <div natasha-form ng-form>
                             <h1>Choose products</h1>
 
                             <div class="row">
-                                <div class="col-xs-6"
-                                   ng-class="{'col-xs-offset-3': !natashaFormCtrl.getSelectedFruits().length}">
+                                <div ng-class="{'col-xs-offset-3': !natashaFormCtrl.getSelectedFruits().length, 'col-xs-6': !natashaFormCtrl.shortView, 'col-xs-3': natashaFormCtrl.shortView}">
                                     <div class="row">
                                         <label class="label-wrapper"
                                            ng-repeat="fruit in natashaFormCtrl.fruits"
                                            ng-class="fruit.class">
                                             <input type="checkbox" name="fruit" class="fruit-checkbox"
                                                ng-model="fruit.checked"
+                                               ng-disabled="natashaFormCtrl.shortView"
                                                ng-value="fruit">
                                             <div class="label-box"></div>
                                             <div class="checkbox-view"></div>
@@ -224,41 +216,105 @@
                                     </div>
                                 </div>
 
-                                <div class="col-xs-6"
-                                   ng-if="natashaFormCtrl.getSelectedFruits().length">
+                                <div ng-if="natashaFormCtrl.getSelectedFruits().length"
+                                   ng-class="natashaFormCtrl.shortView ? 'col-xs-3' : 'col-xs-6'">
                                     In the backet:
 
                                     <table class="table">
                                         <thead>
                                             <tr>
                                                 <th>Product</th>
-                                                <th>Price</th>
-                                                <th>Amount</th>
+                                                <th ng-if="!natashaFormCtrl.shortView">Price</th>
+                                                <th ng-if="!natashaFormCtrl.shortView">Amount</th>
                                                 <th>Sum</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr ng-repeat="fruit in natashaFormCtrl.getSelectedFruits()">
                                                 <td ng-bind="fruit.name"></td>
-                                                <td><span ng-bind="fruit.price"></span> $</td>
-                                                <td class="form-inline">
+                                                <td ng-if="!natashaFormCtrl.shortView"><span ng-bind="fruit.price"></span> $</td>
+                                                <td class="form-inline"
+                                                   ng-if="!natashaFormCtrl.shortView">
                                                     <input type="number" min="1" class="form-control fruit-amount-field"
                                                        ng-model="fruit.amount">
                                                     kg
                                                 </td>
-                                                <td ng-bind="fruit.price * fruit.amount"></td>
+                                                <td ng-if="!natashaFormCtrl.shortView"
+                                                   ng-bind="fruit.price * fruit.amount"></td>
+                                                <td ng-if="natashaFormCtrl.shortView">
+                                                    <span ng-bind="fruit.price"></span>
+                                                    *
+                                                    <span ng-bind="fruit.amount"></span>
+                                                    =
+                                                    <span ng-bind="fruit.price * fruit.amount"></span>
+                                                    $
+                                                </td>
                                             </tr>
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <td colspan="2"></td>
+                                                <td colspan="2"
+                                                   ng-if="!natashaFormCtrl.shortView"></td>
                                                 <td><strong class="pull-right">Total:</strong></td>
                                                 <td><strong ng-bind="natashaFormCtrl.getTotalFruitsSum()"></strong></td>
                                             </tr>
                                         </tfoot>
                                     </table>
 
-                                    <button class="btn btn-success btn-md pull-right">Order</button>
+                                    <button class="btn btn-success btn-md pull-right"
+                                       ng-if="!natashaFormCtrl.shortView"
+                                       ng-click="natashaFormCtrl.shortView = true">
+                                        Order
+                                    </button>
+
+                                    <button class="btn btn-info pull-right"
+                                       ng-if="natashaFormCtrl.shortView && !natashaFormCtrl.orderFinished"
+                                       ng-click="natashaFormCtrl.shortView = false">
+                                        Edit order
+                                    </button>
+                                </div>
+
+                                <div class="col-xs-6"
+                                   ng-if="natashaFormCtrl.shortView">
+                                    <div class="form-horizontal"
+                                       ng-if="!natashaFormCtrl.orderFinished"
+                                       ng-form="orderForm">
+                                        <div class="form-group"
+                                           ng-repeat="field in natashaFormCtrl.formFields">
+                                            <label class="control-label col-sm-2"
+                                               ng-attr-for="{{field.id}}"
+                                               ng-bind="field.title"></label>
+                                            <div class="col-sm-10">
+                                                <input type="text" class="form-control order-field-input"
+                                                   ng-attr-id="{{field.id}}"
+                                                   ng-pattern="field.regex"
+                                                   ng-model="field.value"
+                                                   ng-required="true"
+                                                   placeholder="{{field.placeholder}}">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <div class="checkbox">
+                                                    <label><input type="checkbox"> register me</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-2 col-sm-10">
+                                                <button type="submit" class="btn btn-default"
+                                                   ng-disabled="orderForm.$invalid"
+                                                   ng-click="natashaFormCtrl.orderFinished = true">
+                                                    Submit
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="jumbotron"
+                                       ng-if="natashaFormCtrl.orderFinished">
+                                        <h1>Thank you for the order!</h1>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -289,7 +345,7 @@
                         <img class="footer-logo" src="img/logo-dark.png" alt="Aironepage Logo">
                     </div>
                     <div class="col-xs-6 text-right">
-                        <p class="margin-b-0"><a class="fweight-700">Project for Main Academy</a> 
+                        <p class="margin-b-0"><a class="fweight-700">Project for Main Academy</a></p>
                     </div>
                 </div>
             </div>
