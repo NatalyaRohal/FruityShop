@@ -49,6 +49,27 @@ function NatashaMainWrapperController() {
             {href: '#service', text: 'Service'},
             {href: '#work', text: 'Work'},
             {href: '#contact', text: 'Contact'}
+        ],
+        sliderLatestProducts: [
+            {img: 'img/970x647/01.jpg', title: 'Strawberries', description: 'Management'},
+            {img: 'img/970x647/02.jpg', title: 'Raspberry', description: 'Developmeny'},
+            {img: 'img/970x647/03.jpg', title: 'Cherry', description: 'Design'}
+        ],
+        fullscreenImages: [
+            'img/970x647/01.jpg',
+            'img/970x647/03.jpg'
+        ],
+        gridItems: [
+            [
+                {icon: 'icon-chemistry', title: 'Fresh berries', description: 'Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor'},
+                {wrapperClass: 'bg-color-base wow fadeInDown', textClass: 'color-white', icon: 'color-white icon-screen-tablet', title: 'Sale', description: 'Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor'},
+                {icon: 'icon-badge', title: 'Fresh berries', description: 'Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor'}
+            ],
+            [
+                {icon: 'icon-notebook', title: 'Sale', description: 'Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor'},
+                {icon: 'icon-speedometer', title: 'Fresh berries', description: 'Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor'},
+                {icon: 'icon-badge', title: 'Sale', description: 'Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor'}
+            ]
         ]
     });
 }

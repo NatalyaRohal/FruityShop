@@ -36,7 +36,7 @@
                             </a>
                         </div>
                     </div>
-                    <!--  nav links, forms, and other content for toggling -->
+
                     <div class="collapse navbar-collapse nav-collapse">
                         <div class="menu-container">
                             <ul class="nav navbar-nav navbar-nav-right">
@@ -73,27 +73,16 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4 sm-margin-b-50">
+                    <div class="col-sm-4 sm-margin-b-50"
+                       ng-repeat="item in natashaMainWrapperCtrl.sliderLatestProducts">
                         <div class="margin-b-20">
-                            <img class="img-responsive wow fadeIn" src="img/970x647/01.jpg" alt="Latest Products Image" data-wow-duration=".3" data-wow-delay=".1s">
+                            <img class="img-responsive wow fadeIn" alt="Latest Products Image" data-wow-duration=".3" data-wow-delay=".1s"
+                               ng-src="{{item.img}}">
                         </div>
-                        <h4><a href="#">Strawberries</a> <span class="text-uppercase margin-l-20">Management</span></h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incdidunt ut laboret dolor magna ut consequat siad esqudiat dolor</p>
-                        <a class="link" href="#">Read More</a>
-                    </div>
-                    <div class="col-sm-4 sm-margin-b-50">
-                        <div class="margin-b-20">
-                            <img class="img-responsive wow fadeIn" src="img/970x647/02.jpg" alt="Latest Products Image" data-wow-duration=".3" data-wow-delay=".2s">
-                        </div>
-                        <h4><a href="#">Raspberry</a> <span class="text-uppercase margin-l-20">Developmeny</span></h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incdidunt ut laboret dolor magna ut consequat siad esqudiat dolor</p>
-                        <a class="link" href="#">Read More</a>
-                    </div>
-                    <div class="col-sm-4 sm-margin-b-50">
-                        <div class="margin-b-20">
-                            <img class="img-responsive wow fadeIn" src="img/970x647/03.jpg" alt="Latest Products Image" data-wow-duration=".3" data-wow-delay=".3s">
-                        </div>
-                        <h4><a href="#">Cherry</a> <span class="text-uppercase margin-l-20">Design</span></h4>
+                        <h4>
+                            <a href="#" ng-bind="item.title"></a>
+                            <span class="text-uppercase margin-l-20" ng-bind="item.description"></span>
+                        </h4>
                         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incdidunt ut laboret dolor magna ut consequat siad esqudiat dolor</p>
                         <a class="link" href="#">Read More</a>
                     </div>
@@ -101,11 +90,9 @@
             </div>
             <div class="container-full-width">
                 <div class="row row-space-2">
-                    <div class="col-sm-6 sm-margin-b-4">
-                        <img class="img-responsive" src="img/970x647/01.jpg" alt="Image">
-                    </div>
-                    <div class="col-sm-6">
-                        <img class="img-responsive" src="img/970x647/03.jpg" alt="Image">
+                    <div class="col-sm-6 sm-margin-b-4" ng-repeat="image in natashaMainWrapperCtrl.fullscreenImages">
+                        <img class="img-responsive" alt="Image"
+                           ng-src="{{image}}">
                     </div>
                 </div>
             </div>
@@ -113,79 +100,23 @@
         <div id="service">
             <div class="bg-color-sky-light" data-auto-height="true">
                 <div class="content-lg container">
-                    <div class="row row-space-2 margin-b-4">
-                        <div class="col-sm-4 sm-margin-b-4">
-                            <div class="service" data-height="height">
+                    <div class="row row-space-2 margin-b-4"
+                       ng-repeat="row in natashaMainWrapperCtrl.gridItems">
+                        <div class="col-sm-4 sm-margin-b-4"
+                           ng-repeat="item in row">
+                            <div class="service" data-height="height"
+                               ng-class="item.wrapperClass">
                                 <div class="service-element">
-                                    <i class="service-icon icon-chemistry"></i>
+                                    <i class="service-icon"
+                                       ng-class="item.icon"></i>
                                 </div>
                                 <div class="service-info">
-                                    <h3>Fresh berries</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
+                                    <h3 ng-bind="item.title"></h3>
+                                    <p class="margin-b-5"
+                                       ng-class="item.textClass"
+                                       ng-bind="item.description"></p>
                                 </div>
-                                <a href="#" class="content-wrapper-link"></a>    
-                            </div>
-                        </div>
-                        <div class="col-sm-4 sm-margin-b-4">
-                            <div class="service bg-color-base wow fadeInDown" data-height="height" data-wow-duration=".3" data-wow-delay=".1s">
-                                <div class="service-element">
-                                    <i class="service-icon color-white icon-screen-tablet"></i>
-                                </div>
-                                <div class="service-info">
-                                    <h3 class="color-white">Sale</h3>
-                                    <p class="color-white margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>    
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="service" data-height="height">
-                                <div class="service-element">
-                                    <i class="service-icon icon-badge"></i>
-                                </div>
-                                <div class="service-info">
-                                    <h3>Fresh berries</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row row-space-2">
-                        <div class="col-sm-4 sm-margin-b-4">
-                            <div class="service" data-height="height">
-                                <div class="service-element">
-                                    <i class="service-icon icon-notebook"></i>
-                                </div>
-                                <div class="service-info">
-                                    <h3>Sale</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>    
-                            </div>
-                        </div>
-                        <div class="col-sm-4 sm-margin-b-4">
-                            <div class="service" data-height="height">
-                                <div class="service-element">
-                                    <i class="service-icon icon-speedometer"></i>
-                                </div>
-                                <div class="service-info">
-                                    <h3>Fresh berries</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>    
-                            </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <div class="service" data-height="height">
-                                <div class="service-element">
-                                    <i class="service-icon icon-badge"></i>
-                                </div>
-                                <div class="service-info">
-                                    <h3>Sale</h3>
-                                    <p class="margin-b-5">Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor</p>
-                                </div>
-                                <a href="#" class="content-wrapper-link"></a>    
+                                <a href="#" class="content-wrapper-link"></a>
                             </div>
                         </div>
                     </div>
