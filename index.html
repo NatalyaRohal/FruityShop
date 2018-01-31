@@ -462,151 +462,52 @@
                     <div class="row">
                         <div > <!-- class="col-sm-2 sm-margin-b-30" -->
 
+<!-- select a product -->
+<div class="container content-lg">
+                <div class="row text-center margin-b-10">
+                    <div class="col-sm-6 col-sm-offset-3">
+                <h1>Select a product</h1>
+                </div>
+                </div>
+                </div>
+                     <div ng-app="NatashaApp" natasha-form ng-form>
+                        <div class="row">
+                            <div class="col-xs-6 col-xs-offset-3">
+                                <div class="row">
+                                    <label class="label-wrapper"
+                                       ng-repeat="fruit in natashaFormCtrl.fruits"
+                                       ng-class="fruit.class">
+                                        <input type="checkbox" name="fruit" class="fruit-checkbox"
+                                           ng-model="fruit.checked"
+                                           ng-value="fruit">
+                                        <div class="label-box"></div>
+                                        <div class="checkbox-view"></div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                       <!--  <h1 class="form-header">Форма))</h1> -->
+                        <div ng-if="!natashaFormCtrl.poluchiElementy().length">
+                            <p>Оберіть потрібний товар</p>
+                        </div>
+                        <div ng-if="natashaFormCtrl.poluchiElementy().length">
+                            У кошику :
+                            <ul>
+                                <li ng-repeat="fruit in natashaFormCtrl.poluchiElementy()">
+                                    {{fruit.name}}, а скіки нада??))
+                                    <input type="text" ng-model="fruit.amount"> кг
+                                    <br>
+                                    Ну значить з тебе тищу за {{fruit.name}})) А точніше {{fruit.price * fruit.amount}} рубасів)))
+                                </li>
+                            </ul>
+                            <br>
+                            А от кстаті сумарно виходить {{natashaFormCtrl.poschitaySumuPlis()}}, так шо будь осторожна)))
+                        </div>
+                    </div>
 
 
-<div ng-app="NatashaApp" natasha-form ng-form>
-    <div class="row">
-        <div class="col-xs-6 col-xs-offset-3">
-            <div class="row">
-                <label class="label-wrapper"
-                   ng-repeat="fruit in natashaFormCtrl.fruits"
-                   ng-class="fruit.class">
-                    <input type="checkbox" name="fruit" class="fruit-checkbox"
-                       ng-model="fruit.checked"
-                       ng-value="fruit">
-                    <div class="label-box"></div>
-                    <div class="checkbox-view"></div>
-                </label>
-            </div>
-        </div>
-    </div>
-
-    <h1 class="form-header">Форма))</h1>
-    <div ng-if="!natashaFormCtrl.poluchiElementy().length">
-        Шось нажми))
-    </div>
-    <div ng-if="natashaFormCtrl.poluchiElementy().length">
-        Ну значить, купляєм:
-        <ul>
-            <li ng-repeat="fruit in natashaFormCtrl.poluchiElementy()">
-                {{fruit.name}}, а скіки нада??))
-                <input type="text" ng-model="fruit.amount"> кг
-                <br>
-                Ну значить з тебе тищу за {{fruit.name}})) А точніше {{fruit.price * fruit.amount}} рубасів)))
-            </li>
-        </ul>
-        <br>
-        А от кстаті сумарно виходить {{natashaFormCtrl.poschitaySumuPlis()}}, так шо будь осторожна)))
-    </div>
-</div>
-
-
-
-
-          <!--  <style>
-    td select,
-    td input {
-      width: 150px;
-    }
-
-    label {
-      display: block;
-    }
-
-    .error input,
-    .error textarea {
-      border: 1px solid red;
-    }
-
-    .error {
-      color: red;
-    }
-  </style>
-</head>
-             <form>
-    <table>
-      <tr>
-        <td>Від кого</td>
-        <td>
-          <input name="from" type="text">
-        </td>
-      </tr>
-      <tr>
-        <td>Пароль</td>
-        <td>
-          <input name="password" type="password">
-        </td>
-      </tr>
-      <tr>
-        <td>Повторіть пароль</td>
-        <td>
-          <input name="password2" type="password">
-        </td>
-      </tr>
-      <tr>
-        <td>Куди</td>
-        <td>
-          <select name="to">
-            <option></option>
-            <option value="1">Нікуди)</option>
-            <option value="2">Кудись)</option>
-            <option value="3">Не знаю</option>
-          </select>
-        </td>
-      </tr>
-    </table>
-
-    Сообщение:
-    <label>
-      <textarea name="message" style="display:block;width:400px;height:80px"></textarea>
-    </label>
-
-    <input type="button" onclick="validate(this.form)" value="Проверить">
-  </form>
-
-  <script>
-    function showError(container, errorMessage) {
-      container.className = 'error';
-      var msgElem = document.createElement('span');
-      msgElem.className = "error-message";
-      msgElem.innerHTML = errorMessage;
-      container.appendChild(msgElem);
-    }
-
-    function resetError(container) {
-      container.className = '';
-      if (container.lastChild.className == "error-message") {
-        container.removeChild(container.lastChild);
-      }
-    }
-
-    function validate(form) {
-      var elems = form.elements;
-
-      resetError(elems.from.parentNode);
-      if (!elems.from.value) {
-        showError(elems.from.parentNode, ' Вкажіть від кого.');
-      }
-
-      resetError(elems.password.parentNode);
-      if (!elems.password.value) {
-        showError(elems.password.parentNode, ' Вкажіть пароль.');
-      } else if (elems.password.value != elems.password2.value) {
-        showError(elems.password.parentNode, ' Паролі не співпадають.');
-      }
-
-      resetError(elems.to.parentNode);
-      if (!elems.to.value) {
-        showError(elems.to.parentNode, ' Вкажіть куди.');
-      }
-
-      resetError(elems.message.parentNode);
-      if (!elems.message.value) {
-        showError(elems.message.parentNode, ' Текст відсутній.');
-      }
-
-    }
-  </script> -->
+<h1>   Оформити замовлення </h1>
   </div>
 </div>
 </div>
