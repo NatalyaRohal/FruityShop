@@ -76,3 +76,8 @@
 .form-header {
   clear: left;
 }
+
+.fruit-amount-field {
+  width: 60px !important;
+  height: 30px;
+}

@@ -17,11 +17,11 @@ function NatashaFormController() {
 
     Object.assign(vm, {
         fruits: [
-            {class: 'fruit1 col-xs-8', name: 'апільсінчик', price: 11, amount: 1},
-            {class: 'fruit2 col-xs-4', name: 'ківчик', price: 9, amount: 1},
-            {class: 'fruit3 col-xs-4', name: 'малинк', price: 10, amount: 1},
-            {class: 'fruit4 col-xs-8', name: 'їжівічечка', price: 33, amount: 1},
-            {class: 'fruit5 col-xs-12', name: 'бананчк', price: 7, amount: 1}
+            {class: 'fruit1 col-xs-8', name: 'orange', price: 11, amount: 1, checked: true},
+            {class: 'fruit2 col-xs-4', name: 'kiwi', price: 9, amount: 1},
+            {class: 'fruit3 col-xs-4', name: 'raspberry', price: 10, amount: 1},
+            {class: 'fruit4 col-xs-8', name: 'khachapuri', price: 33, amount: 1},
+            {class: 'fruit5 col-xs-12', name: 'banana', price: 7, amount: 1}
         ],
 
         getSelectedFruits,
