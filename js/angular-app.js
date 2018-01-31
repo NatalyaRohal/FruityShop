@@ -70,6 +70,22 @@ function NatashaMainWrapperController() {
                 {icon: 'icon-speedometer', title: 'Fresh berries', description: 'Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor'},
                 {icon: 'icon-badge', title: 'Sale', description: 'Lorem ipsum dolor amet consectetur ut consequat siad esqudiat dolor'}
             ]
+        ],
+        fruitsWithPopup: [
+            {boxClass: 'col-sm-6 col-md-8 margin-b-4', img: 'img/800x400/01.jpg', price: 15},
+            {boxClass: 'col-md-4 margin-b-4', img: 'img/397x400/01.jpg', price: 12},
+            {boxClass: 'col-md-4 md-margin-b-4', img: 'img/397x300/01.jpg', price: 24},
+            {boxClass: 'col-md-4 md-margin-b-4', img: 'img/397x300/02.jpg', price: 18},
+            {boxClass: 'col-md-4', img: 'img/397x300/03.jpg', price: 25}
+        ],
+        blockquotes: [
+            {author: 'Joh Milner', text: ['Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua. Ut enim minim veniam exercitation laboris ut siad consequat siad minim enum esqudiat dolore.', 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret tempor incididunt dolore magna consequat siad minim aliqua.']},
+            {author: 'Alex Clarson', text: ['Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.']}
+        ],
+        footerMenu: [
+            {class: 'col-sm-2 sm-margin-b-30', items: ['Home', 'About', 'Work', 'Contact']},
+            {class: 'col-sm-2 sm-margin-b-30', items: ['Twitter','Facebook','Instagram','YouTube']},
+            {class: 'col-sm-3', items: ['Subscribe to Our Newsletter', 'Privacy Policy', 'Terms &amp; Conditions']}
         ]
     });
 }

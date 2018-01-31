@@ -133,10 +133,13 @@
             <div class="content-md container">
                 <div class="masonry-grid row row-space-2">
                     <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
-                    <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-8 margin-b-4">
+                    <div class="masonry-grid-item col-xs-12 col-sm-6"
+                       ng-repeat="item in natashaMainWrapperCtrl.fruitsWithPopup"
+                       ng-class="item.boxClass">
                         <div class="work work-popup-trigger">
                             <div class="work-overlay">
-                                <img class="full-width img-responsive" src="img/800x400/01.jpg" alt="Portfolio Image">
+                                <img class="full-width img-responsive" alt="Portfolio Image"
+                                   ng-src="{{item.img}}">
                             </div>
                             <div class="work-popup-overlay">
                                 <div class="work-popup-content">
@@ -154,127 +157,9 @@
                                         </div>
                                         <div class="col-sm-4">
                                             <div class="margin-t-10 sm-margin-t-0">
-                                                <p class="margin-b-5"><strong>Price : </strong>15 $</p>
-                                                <p class="margin-b-5"><strong>Seller : </strong>TM "Good Morning" </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 margin-b-4">
-                        <div class="work work-popup-trigger">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="img/397x400/01.jpg" alt="Portfolio Image">
-                            </div>
-                            <div class="work-popup-overlay">
-                                <div class="work-popup-content">
-                                    <a href="javascript:void(0);" class="work-popup-close">Hide</a>
-                                    <div class="margin-b-30">
-                                        <h3 class="margin-b-5">Sale</h3>
-                                        <span>Fresh  &amp; sweet berries</span>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
-                                            <div class="margin-t-10 sm-margin-t-0">
-                                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="margin-t-10 sm-margin-t-0">
-                                                <p class="margin-b-5"><strong>Price : </strong>12 $</p>
-                                                <p class="margin-b-5"><strong>Seller : </strong>TM "Good Morning" </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-4">
-                        <div class="work work-popup-trigger">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="img/397x300/01.jpg" alt="Portfolio Image">
-                            </div>
-                            <div class="work-popup-overlay">
-                                <div class="work-popup-content">
-                                    <a href="javascript:void(0);" class="work-popup-close">Hide</a>
-                                    <div class="margin-b-30">
-                                        <h3 class="margin-b-5">Sale</h3>
-                                        <span>Fresh  &amp; sweet berries</span>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
-                                            <div class="margin-t-10 sm-margin-t-0">
-                                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="margin-t-10 sm-margin-t-0">
-                                                <p class="margin-b-5"><strong>Price : </strong>24 $</p>
-                                                <p class="margin-b-5"><strong>Seller : </strong>TM "Good Morning" </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4 md-margin-b-4">
-                        <div class="work work-popup-trigger">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="img/397x300/02.jpg" alt="Portfolio Image">
-                            </div>
-                            <div class="work-popup-overlay">
-                                <div class="work-popup-content">
-                                    <a href="javascript:void(0);" class="work-popup-close">Hide</a>
-                                    <div class="margin-b-30">
-                                        <h3 class="margin-b-5">Sale</h3>
-                                        <span>Fresh  &amp; sweet berries</span>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
-                                            <div class="margin-t-10 sm-margin-t-0">
-                                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="margin-t-10 sm-margin-t-0">
-                                                <p class="margin-b-5"><strong>Price : </strong>18 $</p>
-                                                <p class="margin-b-5"><strong>Seller : </strong>TM "Good Morning" </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="masonry-grid-item col-xs-12 col-sm-6 col-md-4">
-                        <div class="work work-popup-trigger">
-                            <div class="work-overlay">
-                                <img class="full-width img-responsive" src="img/397x300/03.jpg" alt="Portfolio Image">
-                            </div>
-                            <div class="work-popup-overlay">
-                                <div class="work-popup-content">
-                                    <a href="javascript:void(0);" class="work-popup-close">Hide</a>
-                                    <div class="margin-b-30">
-                                        <h3 class="margin-b-5">Sale</h3>
-                                        <span>Fresh  &amp; sweet berries</span>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-8 work-popup-content-divider sm-margin-b-20">
-                                            <div class="margin-t-10 sm-margin-t-0">
-                                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                            <div class="margin-t-10 sm-margin-t-0">
-                                                <p class="margin-b-5"><strong>Price : </strong>25 $</p>
+                                                <p class="margin-b-5">
+                                                    <strong>Price : </strong>
+                                                    <span ng-bind="item.price"></span> $</p>
                                                 <p class="margin-b-5"><strong>Seller : </strong>TM "Good Morning" </p>
                                             </div>
                                         </div>
@@ -292,26 +177,14 @@
                     <h2>Customer Reviews</h2>
                     <div class="swiper-slider swiper-testimonials">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
+                            <div class="swiper-slide"
+                               ng-repeat="quote in natashaMainWrapperCtrl.blockquotes">
                                 <blockquote class="blockquote">
-                                    <div class="margin-b-20">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua. Ut enim minim veniam exercitation laboris ut siad consequat siad minim enum esqudiat dolore.
+                                    <div class="margin-b-20"
+                                       ng-repeat="paragraph in quote.text"
+                                       ng-bind="paragraph">
                                     </div>
-                                    <div class="margin-b-20">
-                                        Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret tempor incididunt dolore magna consequat siad minim aliqua.
-                                    </div>
-                                    <p><span class="fweight-700 color-link">Joh Milner</span>, Customer</p>
-                                </blockquote>
-                            </div>
-                            <div class="swiper-slide">
-                                <blockquote class="blockquote">
-                                    <div class="margin-b-20">
-                                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                    </div>
-                                    <div class="margin-b-20">
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    </div>
-                                    <p><span class="fweight-700 color-link">Alex Clarson</span>, Customer</p>
+                                    <p><span class="fweight-700 color-link" ng-bind="quote.author"></span>, Customer</p>
                                 </blockquote>
                             </div>
                         </div>
@@ -323,7 +196,7 @@
         <div>
             <div class="content-md container">
                 <div class="row">
-                    <div >
+                    <div>
                         <div class="container content-lg">
                             <div class="row text-center margin-b-10">
                                 <div class="col-sm-6 col-sm-offset-3">
@@ -336,11 +209,11 @@
                                 <div class="col-xs-6 col-xs-offset-3">
                                     <div class="row">
                                         <label class="label-wrapper"
-                                            ng-repeat="fruit in natashaFormCtrl.fruits"
-                                            ng-class="fruit.class">
+                                           ng-repeat="fruit in natashaFormCtrl.fruits"
+                                           ng-class="fruit.class">
                                             <input type="checkbox" name="fruit" class="fruit-checkbox"
-                                                ng-model="fruit.checked"
-                                                ng-value="fruit">
+                                               ng-model="fruit.checked"
+                                               ng-value="fruit">
                                             <div class="label-box"></div>
                                             <div class="checkbox-view"></div>
                                         </label>
@@ -369,34 +242,17 @@
                 </div>
             </div>
         </div>
-        <div id="contact">
-        </div>
-        *
+
         <footer class="footer">
             <div class="section-seperator">
                 <div class="content-md container">
                     <div class="row">
-                        <div class="col-sm-2 sm-margin-b-30">
+                        <div ng-repeat="column in natashaMainWrapperCtrl.footerMenu"
+                           ng-class="column.class">
                             <ul class="list-unstyled footer-list">
-                                <li class="footer-list-item"><a href="#">Home</a></li>
-                                <li class="footer-list-item"><a href="#">About</a></li>
-                                <li class="footer-list-item"><a href="#">Work</a></li>
-                                <li class="footer-list-item"><a href="#">Contact</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-2 sm-margin-b-30">
-                            <ul class="list-unstyled footer-list">
-                                <li class="footer-list-item"><a href="#">Twitter</a></li>
-                                <li class="footer-list-item"><a href="#">Facebook</a></li>
-                                <li class="footer-list-item"><a href="#">Instagram</a></li>
-                                <li class="footer-list-item"><a href="#">YouTube</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-sm-3">
-                            <ul class="list-unstyled footer-list">
-                                <li class="footer-list-item"><a href="#">Subscribe to Our Newsletter</a></li>
-                                <li class="footer-list-item"><a href="#">Privacy Policy</a></li>
-                                <li class="footer-list-item"><a href="#">Terms &amp; Conditions</a></li>
+                                <li class="footer-list-item" ng-repeat="item in column.items">
+                                    <a href="#" ng-bind="item"></a>
+                                </li>
                             </ul>
                         </div>
                     </div>
