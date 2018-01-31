@@ -14,6 +14,7 @@ NatashaApp.directive('natashaMainWrapper', () => ({
 
 function NatashaFormController() {
     const vm = this;
+    const anyInputRegex = /.*/;
 
     Object.assign(vm, {
         fruits: [
@@ -24,9 +25,9 @@ function NatashaFormController() {
             {class: 'fruit5 col-xs-12', name: 'banana', price: 7, amount: 1}
         ],
         formFields: [
-            {id: 'name', title: 'Name:', placeholder: 'Your name'},
-            {id: 'city', title: 'City:', placeholder: 'Your city'},
-            {id: 'address', title: 'Address:', placeholder: 'Your address'},
+            {id: 'name', title: 'Name:', placeholder: 'Your name', regex: anyInputRegex},
+            {id: 'city', title: 'City:', placeholder: 'Your city', regex: anyInputRegex},
+            {id: 'address', title: 'Address:', placeholder: 'Your address', regex: anyInputRegex},
             {id: 'email', title: 'Email:', placeholder: 'Your email', regex: /^.+@.+\..+$/}
         ],
 
