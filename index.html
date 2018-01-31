@@ -415,13 +415,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div ng-if="!natashaFormCtrl.poluchiElementy().length">
+                            <div ng-if="!natashaFormCtrl.getSelectedFruits().length">
                                 <p>Оберіть потрібний товар</p>
                             </div>
-                            <div ng-if="natashaFormCtrl.poluchiElementy().length">
+                            <div ng-if="natashaFormCtrl.getSelectedFruits().length">
                                 У кошику :
                                 <ul>
-                                    <li ng-repeat="fruit in natashaFormCtrl.poluchiElementy()">
+                                    <li ng-repeat="fruit in natashaFormCtrl.getSelectedFruits()">
                                         {{fruit.name}}, а скіки нада??))
                                         <input type="text" ng-model="fruit.amount"> кг
                                         <br>
@@ -429,7 +429,7 @@
                                     </li>
                                 </ul>
                                 <br>
-                                А от кстаті сумарно виходить {{natashaFormCtrl.poschitaySumuPlis()}}, так шо будь осторожна)))
+                                А от кстаті сумарно виходить {{natashaFormCtrl.getTotalFruitsSum()}}, так шо будь осторожна)))
                             </div>
                         </div>
                         <h1>   Оформити замовлення </h1>
