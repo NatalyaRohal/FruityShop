@@ -32,7 +32,9 @@ function NatashaFormController() {
         ],
 
         getSelectedFruits,
-        getTotalFruitsSum
+        getTotalFruitsSum,
+        getCatalogClasses,
+        getTableClasses
     });
 
     function getSelectedFruits() {
@@ -43,6 +45,28 @@ function NatashaFormController() {
     function getTotalFruitsSum() {
         return getSelectedFruits()
             .reduce((sum, fruit) => sum + fruit.amount * fruit.price, 0);
+    }
+
+    function getCatalogClasses() {
+        const onlyFirstVisible = !getSelectedFruits().length && !vm.shortView;
+        const twoColumnsVisible = !onlyFirstVisible && !vm.shortView;
+        const threeColumnsVisible = vm.shortView;
+
+        return {
+            'col-lg-offset-3 col-md-offset-2 col-lg-6 col-md-8': onlyFirstVisible,
+            'col-md-6 col-xs-12': twoColumnsVisible,
+            'col-md-3 col-sm-6 col-xs-12': threeColumnsVisible
+        };
+    }
+
+    function getTableClasses() {
+        const twoColumnsVisible = !vm.shortView;
+        const threeColumnsVisible = vm.shortView;
+
+        return {
+            'col-md-6 col-xs-12': twoColumnsVisible,
+            'col-md-3 col-sm-6 col-xs-12': threeColumnsVisible
+        };
     }
 }
 

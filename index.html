@@ -201,7 +201,7 @@
                             <h1>Choose products</h1>
 
                             <div class="row">
-                                <div ng-class="{'col-xs-offset-3': !natashaFormCtrl.getSelectedFruits().length, 'col-xs-6': !natashaFormCtrl.shortView, 'col-xs-3': natashaFormCtrl.shortView}">
+                                <div ng-class="natashaFormCtrl.getCatalogClasses()">
                                     <div class="row">
                                         <label class="label-wrapper"
                                            ng-repeat="fruit in natashaFormCtrl.fruits"
@@ -209,7 +209,7 @@
                                             <input type="checkbox" name="fruit" class="fruit-checkbox"
                                                ng-model="fruit.checked"
                                                ng-disabled="natashaFormCtrl.shortView"
-                                               ng-value="fruit">
+                                               ng-value="fruit.checked">
                                             <div class="label-box"></div>
                                             <div class="checkbox-view"></div>
                                         </label>
@@ -217,7 +217,7 @@
                                 </div>
 
                                 <div ng-if="natashaFormCtrl.getSelectedFruits().length"
-                                   ng-class="natashaFormCtrl.shortView ? 'col-xs-3' : 'col-xs-6'">
+                                   ng-class="natashaFormCtrl.getTableClasses()">
                                     In the backet:
 
                                     <table class="table">
@@ -274,7 +274,7 @@
                                     </button>
                                 </div>
 
-                                <div class="col-xs-6"
+                                <div class="col-md-6 col-xs-12"
                                    ng-if="natashaFormCtrl.shortView">
                                     <div class="form-horizontal"
                                        ng-if="!natashaFormCtrl.orderFinished"
