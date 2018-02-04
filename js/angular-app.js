@@ -1,18 +1,18 @@
-var NatashaApp = angular.module('NatashaApp', []);
+const FruityShopApp = angular.module('FruityShopApp', []);
 
-NatashaApp.directive('natashaForm', () => ({
+FruityShopApp.directive('fruityOrderForm', () => ({
     restrict: 'A',
-    controller: NatashaFormController,
-    controllerAs: 'natashaFormCtrl'
+    controller: FruityOrderFormController,
+    controllerAs: 'fruityOrderFormCtrl'
 }));
 
-NatashaApp.directive('natashaMainWrapper', () => ({
+FruityShopApp.directive('fruityMainWrapper', () => ({
     restrict: 'A',
-    controller: NatashaMainWrapperController,
-    controllerAs: 'natashaMainWrapperCtrl'
+    controller: FruityMainWrapperController,
+    controllerAs: 'fruityMainWrapperCtrl'
 }));
 
-function NatashaFormController() {
+function FruityOrderFormController() {
     const vm = this;
     const anyInputRegex = /.*/;
 
@@ -34,7 +34,8 @@ function NatashaFormController() {
         getSelectedFruits,
         getTotalFruitsSum,
         getCatalogClasses,
-        getTableClasses
+        getTableClasses,
+        isAnyFruitSelected
     });
 
     function getSelectedFruits() {
@@ -48,9 +49,9 @@ function NatashaFormController() {
     }
 
     function getCatalogClasses() {
-        const onlyFirstVisible = !getSelectedFruits().length && !vm.shortView;
-        const twoColumnsVisible = !onlyFirstVisible && !vm.shortView;
-        const threeColumnsVisible = vm.shortView;
+        const onlyFirstVisible = !isAnyFruitSelected() && !vm.orderPerformed;
+        const twoColumnsVisible = !onlyFirstVisible && !vm.orderPerformed;
+        const threeColumnsVisible = vm.orderPerformed;
 
         return {
             'col-lg-offset-3 col-md-offset-2 col-lg-6 col-md-8': onlyFirstVisible,
@@ -60,17 +61,21 @@ function NatashaFormController() {
     }
 
     function getTableClasses() {
-        const twoColumnsVisible = !vm.shortView;
-        const threeColumnsVisible = vm.shortView;
+        const twoColumnsVisible = !vm.orderPerformed;
+        const threeColumnsVisible = vm.orderPerformed;
 
         return {
             'col-md-6 col-xs-12': twoColumnsVisible,
             'col-md-3 col-sm-6 col-xs-12': threeColumnsVisible
         };
     }
+
+    function isAnyFruitSelected() {
+        return getSelectedFruits().length;
+    }
 }
 
-function NatashaMainWrapperController() {
+function FruityMainWrapperController() {
     const vm = this;
 
     Object.assign(vm, {

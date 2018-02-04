@@ -16,13 +16,12 @@
         <link rel="shortcut icon" href="favicon.ico"/>
         <link rel="stylesheet" href="css/angular-app.css" type="text/css"/>
     </head>
-    <body id="body" data-spy="scroll" data-target=".header" ng-app="NatashaApp" natasha-main-wrapper>
+    <body id="body" data-spy="scroll" data-target=".header" ng-app="FruityShopApp" fruity-main-wrapper>
         <script src="vendor/angular.1.2.28.min.js"></script>
 
         <header class="header navbar-fixed-top">
             <nav class="navbar">
                 <div class="container">
-                    <!-- перемикач  -->
                     <div class="menu-container js_nav-item">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
                             <span class="sr-only">Toggle navigation</span>
@@ -41,7 +40,7 @@
                         <div class="menu-container">
                             <ul class="nav navbar-nav navbar-nav-right">
                                 <li class="js_nav-item nav-item"
-                                   ng-repeat="item in natashaMainWrapperCtrl.fixedMenuItems">
+                                   ng-repeat="item in fruityMainWrapperCtrl.fixedMenuItems">
                                     <a class="nav-item-child nav-item-hover"
                                        ng-href="{{item.hrem}}"
                                        ng-bind="item.text"></a>
@@ -74,7 +73,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-4 sm-margin-b-50"
-                       ng-repeat="item in natashaMainWrapperCtrl.sliderLatestProducts">
+                       ng-repeat="item in fruityMainWrapperCtrl.sliderLatestProducts">
                         <div class="margin-b-20">
                             <img class="img-responsive wow fadeIn" alt="Latest Products Image" data-wow-duration=".3" data-wow-delay=".1s"
                                ng-src="{{item.img}}">
@@ -90,7 +89,7 @@
             </div>
             <div class="container-full-width">
                 <div class="row row-space-2">
-                    <div class="col-sm-6 sm-margin-b-4" ng-repeat="image in natashaMainWrapperCtrl.fullscreenImages">
+                    <div class="col-sm-6 sm-margin-b-4" ng-repeat="image in fruityMainWrapperCtrl.fullscreenImages">
                         <img class="img-responsive" alt="Image"
                            ng-src="{{image}}">
                     </div>
@@ -101,7 +100,7 @@
             <div class="bg-color-sky-light" data-auto-height="true">
                 <div class="content-lg container">
                     <div class="row row-space-2 margin-b-4"
-                       ng-repeat="row in natashaMainWrapperCtrl.gridItems">
+                       ng-repeat="row in fruityMainWrapperCtrl.gridItems">
                         <div class="col-sm-4 sm-margin-b-4"
                            ng-repeat="item in row">
                             <div class="service" data-height="height"
@@ -134,7 +133,7 @@
                 <div class="masonry-grid row row-space-2">
                     <div class="masonry-grid-sizer col-xs-6 col-sm-6 col-md-1"></div>
                     <div class="masonry-grid-item col-xs-12 col-sm-6"
-                       ng-repeat="item in natashaMainWrapperCtrl.fruitsWithPopup"
+                       ng-repeat="item in fruityMainWrapperCtrl.fruitsWithPopup"
                        ng-class="item.boxClass">
                         <div class="work work-popup-trigger">
                             <div class="work-overlay">
@@ -178,7 +177,7 @@
                     <div class="swiper-slider swiper-testimonials">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide"
-                               ng-repeat="quote in natashaMainWrapperCtrl.blockquotes">
+                               ng-repeat="quote in fruityMainWrapperCtrl.blockquotes">
                                 <blockquote class="blockquote">
                                     <div class="margin-b-20"
                                        ng-repeat="paragraph in quote.text"
@@ -197,18 +196,18 @@
             <div class="content-md container">
                 <div class="row">
                     <div>
-                        <div natasha-form ng-form>
+                        <div fruity-order-form ng-form>
                             <h1>Choose products</h1>
 
                             <div class="row">
-                                <div ng-class="natashaFormCtrl.getCatalogClasses()">
+                                <div ng-class="fruityOrderFormCtrl.getCatalogClasses()">
                                     <div class="row">
                                         <label class="label-wrapper"
-                                           ng-repeat="fruit in natashaFormCtrl.fruits"
+                                           ng-repeat="fruit in fruityOrderFormCtrl.fruits"
                                            ng-class="fruit.class">
                                             <input type="checkbox" name="fruit" class="fruit-checkbox"
                                                ng-model="fruit.checked"
-                                               ng-disabled="natashaFormCtrl.shortView"
+                                               ng-disabled="fruityOrderFormCtrl.orderPerformed"
                                                ng-value="fruit.checked">
                                             <div class="label-box"></div>
                                             <div class="checkbox-view"></div>
@@ -216,32 +215,32 @@
                                     </div>
                                 </div>
 
-                                <div ng-if="natashaFormCtrl.getSelectedFruits().length"
-                                   ng-class="natashaFormCtrl.getTableClasses()">
+                                <div ng-if="fruityOrderFormCtrl.isAnyFruitSelected()"
+                                   ng-class="fruityOrderFormCtrl.getTableClasses()">
                                     In the backet:
 
                                     <table class="table">
                                         <thead>
                                             <tr>
                                                 <th>Product</th>
-                                                <th ng-if="!natashaFormCtrl.shortView">Price</th>
-                                                <th ng-if="!natashaFormCtrl.shortView">Amount</th>
+                                                <th ng-if="!fruityOrderFormCtrl.orderPerformed">Price</th>
+                                                <th ng-if="!fruityOrderFormCtrl.orderPerformed">Amount</th>
                                                 <th>Sum</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr ng-repeat="fruit in natashaFormCtrl.getSelectedFruits()">
+                                            <tr ng-repeat="fruit in fruityOrderFormCtrl.getSelectedFruits()">
                                                 <td ng-bind="fruit.name"></td>
-                                                <td ng-if="!natashaFormCtrl.shortView"><span ng-bind="fruit.price"></span> $</td>
+                                                <td ng-if="!fruityOrderFormCtrl.orderPerformed"><span ng-bind="fruit.price"></span> $</td>
                                                 <td class="form-inline"
-                                                   ng-if="!natashaFormCtrl.shortView">
+                                                   ng-if="!fruityOrderFormCtrl.orderPerformed">
                                                     <input type="number" min="1" class="form-control fruit-amount-field"
                                                        ng-model="fruit.amount">
                                                     kg
                                                 </td>
-                                                <td ng-if="!natashaFormCtrl.shortView"
+                                                <td ng-if="!fruityOrderFormCtrl.orderPerformed"
                                                    ng-bind="fruit.price * fruit.amount"></td>
-                                                <td ng-if="natashaFormCtrl.shortView">
+                                                <td ng-if="fruityOrderFormCtrl.orderPerformed">
                                                     <span ng-bind="fruit.price"></span>
                                                     *
                                                     <span ng-bind="fruit.amount"></span>
@@ -254,33 +253,33 @@
                                         <tfoot>
                                             <tr>
                                                 <td colspan="2"
-                                                   ng-if="!natashaFormCtrl.shortView"></td>
+                                                   ng-if="!fruityOrderFormCtrl.orderPerformed"></td>
                                                 <td><strong class="pull-right">Total:</strong></td>
-                                                <td><strong ng-bind="natashaFormCtrl.getTotalFruitsSum()"></strong></td>
+                                                <td><strong ng-bind="fruityOrderFormCtrl.getTotalFruitsSum()"></strong></td>
                                             </tr>
                                         </tfoot>
                                     </table>
 
                                     <button class="btn btn-success btn-md pull-right"
-                                       ng-if="!natashaFormCtrl.shortView"
-                                       ng-click="natashaFormCtrl.shortView = true">
+                                       ng-if="!fruityOrderFormCtrl.orderPerformed"
+                                       ng-click="fruityOrderFormCtrl.orderPerformed = true">
                                         Order
                                     </button>
 
                                     <button class="btn btn-info pull-right"
-                                       ng-if="natashaFormCtrl.shortView && !natashaFormCtrl.orderFinished"
-                                       ng-click="natashaFormCtrl.shortView = false">
+                                       ng-if="fruityOrderFormCtrl.orderPerformed && !fruityOrderFormCtrl.orderFinished"
+                                       ng-click="fruityOrderFormCtrl.orderPerformed = false">
                                         Edit order
                                     </button>
                                 </div>
 
                                 <div class="col-md-6 col-xs-12"
-                                   ng-if="natashaFormCtrl.shortView">
+                                   ng-if="fruityOrderFormCtrl.orderPerformed">
                                     <div class="form-horizontal"
-                                       ng-if="!natashaFormCtrl.orderFinished"
+                                       ng-if="!fruityOrderFormCtrl.orderFinished"
                                        ng-form="orderForm">
                                         <div class="form-group"
-                                           ng-repeat="field in natashaFormCtrl.formFields">
+                                           ng-repeat="field in fruityOrderFormCtrl.formFields">
                                             <label class="control-label col-sm-2"
                                                ng-attr-for="{{field.id}}"
                                                ng-bind="field.title"></label>
@@ -304,7 +303,7 @@
                                             <div class="col-sm-offset-2 col-sm-10">
                                                 <button type="submit" class="btn btn-default"
                                                    ng-disabled="orderForm.$invalid"
-                                                   ng-click="natashaFormCtrl.orderFinished = true">
+                                                   ng-click="fruityOrderFormCtrl.orderFinished = true">
                                                     Submit
                                                 </button>
                                             </div>
@@ -312,7 +311,7 @@
                                     </div>
 
                                     <div class="jumbotron"
-                                       ng-if="natashaFormCtrl.orderFinished">
+                                       ng-if="fruityOrderFormCtrl.orderFinished">
                                         <h1>Thank you for the order!</h1>
                                     </div>
                                 </div>
@@ -327,7 +326,7 @@
             <div class="section-seperator">
                 <div class="content-md container">
                     <div class="row">
-                        <div ng-repeat="column in natashaMainWrapperCtrl.footerMenu"
+                        <div ng-repeat="column in fruityMainWrapperCtrl.footerMenu"
                            ng-class="column.class">
                             <ul class="list-unstyled footer-list">
                                 <li class="footer-list-item" ng-repeat="item in column.items">
