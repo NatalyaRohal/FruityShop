@@ -1,9 +1,6 @@
 .label-wrapper {
-  height: 100px;
-}
-
-.label-wrapper {
   float: left;
+  height: 100px;
   position: relative;
 }
 
@@ -19,7 +16,7 @@
   position: absolute;
   top: 5px;
   right: 10px;
-  background: url('https://api.icons8.com/download/f0810b7548fdebcc248b69167c896c2da1ebdac7/Color/PNG/512/Very_Basic/ok-512.png');
+  background: url('../img/check-mark.png');
   background-size: cover;
   width: 30px;
   height: 30px;
@@ -54,27 +51,23 @@
 }
 
 .fruit1 .label-box {
-  background: url('http://hnb.com.ua/artimages/apelsin%2021.jpg');
+  background: url('../img/fruits/orange.jpg');
 }
 
 .fruit2 .label-box{
-  background: url('http://edinstvennaya.ua/uploads/files/%D0%9A%D0%B0%D0%BA-%D0%BF%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D1%8C%D0%BD%D0%BE-%D0%B2%D1%8B%D0%B1%D1%80%D0%B0%D1%82%D1%8C-%D0%BA%D0%B8%D0%B2%D0%B8.jpeg');
+  background: url('../img/fruits/kiwi.jpg');
 }
 
 .fruit3 .label-box{
-  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Raspberries05.jpg/250px-Raspberries05.jpg');
+  background: url('../img/fruits/raspberry.jpg');
 }
 
 .fruit4 .label-box{
-  background: url('https://ecosad.com.ua/images/stories/virtuemart/product/navakho.jpg');
+  background: url('../img/fruits/blackberry.jpg');
 }
 
 .fruit5 .label-box{
-  background: url('http://foodandhealth.ru/wp-content/uploads/2016/08/banan.jpg');
-}
-
-.form-header {
-  clear: left;
+  background: url('../img/fruits/banana.jpg');
 }
 
 .fruit-amount-field {
