@@ -87,13 +87,14 @@ function FruityMainWrapperController() {
             {href: '#contact', text: 'Contact'}
         ],
         sliderLatestProducts: [
-            {img: 'img/970x647/01.jpg', title: 'Strawberries', description: 'Management'},
-            {img: 'img/970x647/02.jpg', title: 'Raspberry', description: 'Developmeny'},
-            {img: 'img/970x647/03.jpg', title: 'Cherry', description: 'Design'}
+            {img: 'img/970x647/gallery-pic-01-970x647.jpg', title: 'Strawberries', description: 'Management'},
+            {img: 'img/970x647/gallery-pic-02-970x647.jpg', title: 'Raspberry', description: 'Developmeny'},
+            {img: 'img/970x647/gallery-pic-03-970x647.jpg', title: 'Cherry', description: 'Design'}
         ],
         fullscreenImages: [
-            'img/970x647/01.jpg',
-            'img/970x647/03.jpg'
+            'img/970x647/gallery-pic-01-970x647.jpg',
+            'img/970x647/gallery-pic-02-970x647.jpg',
+            'img/970x647/gallery-pic-03-970x647.jpg'
         ],
         gridItems: [
             [
@@ -108,11 +109,11 @@ function FruityMainWrapperController() {
             ]
         ],
         fruitsWithPopup: [
-            {boxClass: 'col-sm-6 col-md-8 margin-b-4', img: 'img/800x400/01.jpg', price: 15},
-            {boxClass: 'col-md-4 margin-b-4', img: 'img/397x400/01.jpg', price: 12},
-            {boxClass: 'col-md-4 md-margin-b-4', img: 'img/397x300/01.jpg', price: 24},
-            {boxClass: 'col-md-4 md-margin-b-4', img: 'img/397x300/02.jpg', price: 18},
-            {boxClass: 'col-md-4', img: 'img/397x300/03.jpg', price: 25}
+            {boxClass: 'col-sm-6 col-md-8 margin-b-4', img: 'img/800x400/gallery-pic-01-800x400.jpg', price: 15},
+            {boxClass: 'col-md-4 margin-b-4', img: 'img/397x400/gallery-pic-01-397x400.jpg', price: 12},
+            {boxClass: 'col-md-4 md-margin-b-4', img: 'img/397x300/gallery-pic-01-397x300.jpg', price: 24},
+            {boxClass: 'col-md-4 md-margin-b-4', img: 'img/397x300/gallery-pic-02-397x300.jpg', price: 18},
+            {boxClass: 'col-md-4', img: 'img/397x300/gallery-pic-03-397x300.jpg', price: 25}
         ],
         blockquotes: [
             {author: 'Joh Milner', text: ['Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret dolore magna aliqua. Ut enim minim veniam exercitation laboris ut siad consequat siad minim enum esqudiat dolore.', 'Lorem ipsum dolor sit amet consectetur adipiscing elit sed tempor incididunt ut laboret tempor incididunt dolore magna consequat siad minim aliqua.']},

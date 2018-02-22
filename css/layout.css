@@ -400,7 +400,7 @@ fieldset[disabled] .btn-theme {
 .promo-banner {
     position: relative;
     z-index: 1;
-    background: url(../img/1920x1080/02.jpg) center center no-repeat fixed;
+    background: url(../img/1920x1080/gallery-pic-02-1920x1080.jpg) center center no-repeat fixed;
     background-size: cover;
     min-height: 100%;
 }
@@ -433,7 +433,7 @@ fieldset[disabled] .btn-theme {
 .promo-block {
     position: relative;
     z-index: 1;
-    background: url(../img/1920x1080/01.jpg) center center no-repeat;
+    background: url(../img/1920x1080/gallery-pic-01-1920x1080.jpg) center center no-repeat;
     background-size: cover;
     padding: 250px 0 200px;
 }
