@@ -93,7 +93,6 @@ function FruityMainWrapperController() {
         ],
         fullscreenImages: [
             'img/970x647/gallery-pic-01-970x647.jpg',
-            'img/970x647/gallery-pic-02-970x647.jpg',
             'img/970x647/gallery-pic-03-970x647.jpg'
         ],
         gridItems: [
