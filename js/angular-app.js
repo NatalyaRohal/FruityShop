@@ -120,8 +120,7 @@ function FruityMainWrapperController() {
         ],
         footerMenu: [
             {class: 'col-sm-2 sm-margin-b-30', items: ['Home', 'About', 'Work', 'Contact']},
-            {class: 'col-sm-2 sm-margin-b-30', items: ['Twitter','Facebook','Instagram','YouTube']},
-            {class: 'col-sm-3', items: ['Subscribe to Our Newsletter', 'Privacy Policy', 'Terms &amp; Conditions']}
+            {class: 'col-sm-2 sm-margin-b-30', items: ['Twitter','Facebook','Instagram','YouTube']}
         ]
     });
 }
